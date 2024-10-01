@@ -12,7 +12,7 @@ class Student(models.Model):
     joindate = models.DateTimeField(auto_now_add = True)
     reg_no = models.CharField(max_length=100, unique=True)
     stream = models.ForeignKey(Stream, on_delete=models.CASCADE, 
-             related_name="students")
+        related_name="students")
 
 
     def __str__(self):

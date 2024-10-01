@@ -23,7 +23,7 @@
             <button type="submit">Submit</button>
       </form>
   </div>
-        <!-- list of students  -->
+        
         <div>
             <h4 class="text-center mb-3 mt-3">Students List</h4>
             <div class="table-responsive-sm">
@@ -52,8 +52,8 @@
                                     href="{% url 'std_detail' reg=student.reg_no %}">View</a>
                             </td>
                             <td>
-                                <a role="button" class="btn btn-sm btn-outline-danger" href="{% url 'delete' id=student.id %}">Delete</a>
-                                <!-- <button class="btn btn-sm btn-outline-danger">Delete</button></td> -->
+                                <a role="button" class="btn btn-sm btn-outline-danger" href="{% url 'delete' reg=student.reg_no %}">Delete</a>
+                               
                         </tr>
                         {% empty %}
                         <span class="text-center">No students to show</span>

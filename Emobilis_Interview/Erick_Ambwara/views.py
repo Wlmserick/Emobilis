@@ -13,7 +13,7 @@ def CreateStudent(request):
 
     students = Student.objects.all().order_by("-id")
     context = {'form':form, 'students':students}
-    return render(request, 'home.html', context)
+    return render(request, 'index.html', context)
 
 
 def GetStudent(request, **kwargs):
@@ -28,10 +28,10 @@ def GetStudent(request, **kwargs):
         form = CreateStudentForm(instance=student)
 
     context = {'student':student, 'form': form}
-    return render(request, 'std_detail.html', context )
+    return render(request, 'student.html', context )
 
 def DeleteStudent(request, **kwargs):
     reg = kwargs.get('reg')
     student = Student.objects.get(reg_no=reg)
     student.delete()
-    return redirect('home')
+    return redirect('create_student')

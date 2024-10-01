@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import CreateStudent,GetStudent
+from .views import CreateStudent,GetStudent,DeleteStudent
 
 urlpatterns = [
     path('', CreateStudent, name='create_student'),
     path('std_detail/<str:reg>/', GetStudent, name='std_detail'),
-    #path('delete/<int:id>', Delete, name='delete'),
+    path('delete/<int:reg>/', DeleteStudent, name='delete'),
 ]
