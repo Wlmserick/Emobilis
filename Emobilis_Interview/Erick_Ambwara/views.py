@@ -35,3 +35,9 @@ def DeleteStudent(request, **kwargs):
     student = Student.objects.get(reg_no=reg)
     student.delete()
     return redirect('create_student')
+
+def UpdateStudent(request, **kwargs):
+    reg = kwargs.get('reg')
+    student = Student.objects.get(reg_no=reg)
+    student.delete()
+    return redirect('create_student')
